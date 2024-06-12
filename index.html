@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Love</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sofia&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="playPauseButtons">
+        <button id="playButton">
+            clique aqui
+            <svg height="32" width="32" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0H24V24H0z" fill="none"></path><path d="M16.5 3C19.538 3 22 5.5 22 9c0 7-7.5 11-10 12.5C9.5 20 2 16 2 9c0-3.5 2.5-6 5.5-6C9.36 3 11 4 12 5c1-1 2.64-2 4.5-2z"></path></svg>
+          </button>
+    </div>
+    <audio id="musicaFundo" autoplay loop>
+        <source src="./music/Preciso De Ti _ Casa Worship _ Momentos (320).mp3" type="audio/mpeg">
+        Seu navegador não suporta o elemento de áudio.
+    </audio>
+    <audio id="musicaFundo1" autoplay loop>
+        <source src="./music/It Feels So Good (Radio Edit) (320).mp3" type="audio/mpeg">
+        Seu navegador não suporta o elemento de áudio.
+    </audio>
+    <audio id="musicaFundo2" autoplay loop>
+        <source src="./music/Christafari - Oceans (Where Feet May Fail) Official Music Video [Feat. Avion Blackman] (320).mp3" type="audio/mpeg">
+        Seu navegador não suporta o elemento de áudio.
+    </audio>
+    <audio id="musicaFundo3" autoplay loop>
+        <source src="./music/WhatsApp Audio 2024-06-11 at 20.31.52.ogg" type="audio/mpeg">
+        Seu navegador não suporta o elemento de áudio.
+    </audio>
+    <main>
+        <div id="content">
+
+            <div id="sub-content">
+                <div id="img-content">
+                    <div id="img">
+                    </div>
+                    <p style="text-align: center;">Coríntios 13:4-7</p>
+                </div>
+                <div id="butons">
+                    <button class="button" id="musica1">
+                        Nossa música
+                        <div class="hoverEffect">
+                        <div>
+                        </div>
+                        </div>
+                    </button>
+                    <button class="button" id="musica2">
+                        Deus está conosco
+                        <div class="hoverEffect">
+                        <div>
+                        </div>
+                        </div>
+                    </button>
+                    <button class="button" id="musica3">
+                        Escute é importante
+                        <div class="hoverEffect">
+                        <div>
+                        </div>
+                        </div>
+                    </button>
+                    <p>Amo muito você e quero passar o resto da minha vida com você meu amor ❤️ 
+                        Você é o meu melhor investimento e meu maior tesouro aqui na terra. Amo muito você</p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+    <script>
+
+        var musicaFundo = document.getElementById('musicaFundo');
+        var musicaFundo1 = document.getElementById('musicaFundo1');
+        var musicaFundo2 = document.getElementById('musicaFundo2');
+        var musicaFundo3 = document.getElementById('musicaFundo3');
+
+        var listMusic = [musicaFundo, musicaFundo1, musicaFundo2, musicaFundo3];
+
+        var playButton = document.getElementById('playButton');
+
+        var musica1 = document.getElementById('musica1');
+        var musica2 = document.getElementById('musica2');
+        var musica3 = document.getElementById('musica3');
+
+        playButton.addEventListener('click', function() {
+            let playPauseButtons = document.getElementById('playPauseButtons');
+
+            musicaFundo.play();
+
+            playPauseButtons.classList.add('puff-out-center');
+
+            sleep(2000);
+
+            playPauseButtons.style.display = 'none';
+
+        });
+
+        musica1.addEventListener('click', function() {
+
+            if(musicaFundo1.paused){
+
+                listMusic.forEach(ele => {
+                    ele.pause()
+                })
+    
+                musicaFundo1.play();
+
+            }else{
+
+                musicaFundo1.pause();
+
+            }
+            
+
+        });
+
+        musica2.addEventListener('click', function() {
+
+            if(musicaFundo2.paused){
+                listMusic.forEach(ele => {
+                    ele.pause()
+                })
+                musicaFundo2.play();
+            }else{
+
+                musicaFundo2.pause();
+            }
+
+
+        });
+
+        musica3.addEventListener('click', function() {
+
+            if(musicaFundo3.paused){
+                listMusic.forEach(ele => {
+                    ele.pause()
+                })
+                musicaFundo3.play();
+            }else{
+
+                musicaFundo3.pause();
+            }
+            
+
+        });
+
+        musicaFundo.volume = 0.5; // Define o volume da música // Define o volume da música
+
+        function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+        
+    </script>
+</body>
+</html>
